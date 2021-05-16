@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"hello_world_web/entity"
 	"html/template"
 	"log"
 	"net/http"
@@ -61,9 +62,7 @@ func ProductHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	data := map[string]int{
-		"content": idNum,
-	}
+	data := entity.Product{ID: idNum, Name: "Byson", Price: 12000000, Manufacture: "Yamaha"}
 
 	err = tmpl.Execute(w, data)
 
