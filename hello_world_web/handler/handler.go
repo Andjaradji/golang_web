@@ -62,7 +62,13 @@ func ProductHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	data := entity.Product{ID: idNum, Name: "Byson", Price: 12000000, Manufacture: "Yamaha"}
+	// data := entity.Product{ID: idNum, Name: "Byson", Price: 12000000, Manufacture: "Yamaha"}
+	data := []entity.Product{
+		{ID: idNum, Name: "Byson", Price: 12000000, Manufacture: "Yamaha", Stock: 11},
+		{ID: idNum, Name: "Tiger", Price: 18000000, Manufacture: "Honda", Stock: 8},
+		{ID: idNum, Name: "Scorpio", Price: 10000000, Manufacture: "Yamaha", Stock: 3},
+		{ID: idNum, Name: "Bandit", Price: 15000000, Manufacture: "Suzuki", Stock: 2},
+	}
 
 	err = tmpl.Execute(w, data)
 

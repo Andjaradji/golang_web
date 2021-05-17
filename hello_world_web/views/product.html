@@ -1,16 +1,11 @@
 {{template "layout" .}}
 
 {{define "main"}}
-    <div class="text-content">
-        Product id : {{.ID}}
-    </div>
-    <div class="text-content">
-        Product Name : {{.Name}}
-    </div>
-    <div class="text-content">
-        Product Price : {{.Price}}
-    </div>
-    <div class="text-content">
-        Product Manufacture : {{.Manufacture}}
-    </div>
+
+    {{ range .}}
+        <div class="text-content">
+            {{ .Name }} - {{ .StockStatus}}
+        </div>
+    {{end}}
+
 {{end}}
