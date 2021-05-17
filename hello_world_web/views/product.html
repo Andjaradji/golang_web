@@ -3,9 +3,12 @@
 {{define "main"}}
 
     {{ range .}}
-        <div class="text-content">
-            {{ .Name }} - {{ .StockStatus}}
+        <div class="box-with-shadow">
+            <div class="text-content" >
+                {{ .Name }} - {{ .StockStatus}}
+            </div>
         </div>
+
     {{end}}
 
 {{end}}
